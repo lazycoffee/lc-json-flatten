@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -91,10 +101,12 @@
   !*** ./src/index.ts ***!
   \**********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = function (data) {\r\n    var result = {};\r\n    function recursive(cur, prop) {\r\n        if (Object(cur) !== cur) {\r\n            result[prop] = cur;\r\n        }\r\n        else if (Array.isArray(cur)) {\r\n            for (var i = 0, l = cur.length; i < l; i++) {\r\n                recursive(cur[i], prop ? prop + \".\" + i : \"\" + i);\r\n            }\r\n            if (l == 0) {\r\n                result[prop] = [];\r\n            }\r\n        }\r\n        else {\r\n            var isEmpty = true;\r\n            for (var p in cur) {\r\n                isEmpty = false;\r\n                recursive(cur[p], prop ? prop + \".\" + p : p);\r\n            }\r\n            if (isEmpty) {\r\n                result[prop] = {};\r\n            }\r\n        }\r\n    }\r\n    recursive(data, \"\");\r\n    return result;\r\n};\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+"use strict";
+eval("\r\nvar flatten = function (data) {\r\n    var result = {};\r\n    function recursive(cur, prop) {\r\n        if (Object(cur) !== cur) {\r\n            result[prop] = cur;\r\n        }\r\n        else if (Array.isArray(cur)) {\r\n            for (var i = 0, l = cur.length; i < l; i++) {\r\n                recursive(cur[i], prop ? prop + \".\" + i : \"\" + i);\r\n            }\r\n            if (l == 0) {\r\n                result[prop] = [];\r\n            }\r\n        }\r\n        else {\r\n            var isEmpty = true;\r\n            for (var p in cur) {\r\n                isEmpty = false;\r\n                recursive(cur[p], prop ? prop + \".\" + p : p);\r\n            }\r\n            if (isEmpty) {\r\n                result[prop] = {};\r\n            }\r\n        }\r\n    }\r\n    ;\r\n    recursive(data, \"\");\r\n    return result;\r\n};\r\nmodule.exports = flatten;\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ })
 
 /******/ });
+});

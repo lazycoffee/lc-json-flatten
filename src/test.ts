@@ -1,4 +1,4 @@
-const flatten = require('./index');
+const f = require('./index');
 
 const data:any = {
     a: {
@@ -19,6 +19,6 @@ const data:any = {
     }
 };
 
-const result = flatten(data);
+const result = f(data);
 
 console.log(result);

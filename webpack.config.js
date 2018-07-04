@@ -7,7 +7,8 @@ module.exports = function(env){
         },
         output: {
             path: __dirname,
-            filename: '[name].js'
+            filename: '[name].js',
+            libraryTarget: 'umd'
         },
         module: {
             rules: [{
@@ -18,8 +19,7 @@ module.exports = function(env){
         resolve: {
             extensions: ['.ts']
         },
-        mode: 'development'
-        
+        mode: 'development',
     };
     return config;
 }

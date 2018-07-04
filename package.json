@@ -1,8 +1,9 @@
 {
   "name": "lc-json-flatten",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "JSON flatten",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "typings": "src/index",
   "scripts": {
     "test": "mocha",
     "watch": "webpack --watch"

@@ -1,4 +1,4 @@
-module.exports = function (data: any) {
+const flatten = function (data: any) {
     const result: any = {};
     function recursive(cur: any, prop: any) {
         if (Object(cur) !== cur) {
@@ -20,7 +20,8 @@ module.exports = function (data: any) {
                 result[prop] = {};
             }
         }
-    }
+    };
     recursive(data, "");
     return result;
 };
+export = flatten;
